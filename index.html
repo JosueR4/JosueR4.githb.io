@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flappy Volei Game</title>
+  <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo CSS -->
+  
+  <!-- Biblioteca de Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- Menú principal -->
+  <div id="menu">
+    <div class="menu-content">
+      <h1>Flappy Volei Game</h1>
+      <button id="start-btn">Iniciar Juego</button>
+      <button id="exit-game">Salir</button> <!-- Botón de salir -->
+      <p id="best-score">Mejor Puntaje: 0</p>
+    </div>
+  </div>
+
+  <!-- Contenedor del juego -->
+  <div id="game-container">
+    <!-- Botón de pausa -->
+    <button id="pause-btn" title="Pausar Juego"></button>
+
+    <canvas id="gameCanvas"></canvas>
+    
+    <!-- Pantalla de Game Over -->
+    <div id="game-over">
+      <h2>¡Has Perdido!</h2>
+      <p id="final-score">Puntaje: 0</p>
+      <button id="restart-btn">Reiniciar</button>
+      <button id="exit-btn">Salir al Menú</button>
+    </div>
+    
+    <!-- Pantalla de Pausa -->
+    <div id="pause-overlay">
+      <div class="pause-content">
+        <h2>Pausa</h2>
+        <button id="resume-btn">Reanudar</button>
+        <button id="exit-menu-btn">Salir al Menú</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script> <!-- Enlace al archivo JavaScript -->
+</body>
+</html>

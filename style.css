@@ -1,0 +1,180 @@
+/* Estilo para el menú */
+#menu {
+  background-image: url('menu.png'); /* Fondo del menú principal */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Ocupa toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos Globales para Todo el Texto */
+body, h1, h2, p, button {
+  font-family: 'Arial Black', Arial, sans-serif;
+  color: #000; /* Texto negro */
+  position: relative;
+  
+  text-shadow:
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+}
+
+.menu-content {
+  text-align: center;
+  background-color: #00a6ee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Estilo para el contenedor del juego */
+#game-container {
+  display: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
+
+/* Estilo para el botón de pausa */
+#pause-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-image: url('pausa.png'); /* Imagen del botón de pausa */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 30; /* Asegura que esté por encima del canvas */
+}
+
+#pause-btn:hover {
+  opacity: 0.8;
+}
+
+/* Estilo para el canvas */
+canvas {
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  touch-action: manipulation; /* Mejora la respuesta táctil */
+  z-index: 10; /* Asegura que los botones estén por encima del canvas */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Estilo para la pantalla de Game Over */
+#game-over {
+  display: none;
+  text-align: center;
+  background-color: #00a6ee;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 40; /* Por encima del canvas y botones */
+}
+
+#game-over h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+#game-over button {
+  font-size: 16px;
+  padding: 12px;
+  margin: 8px;
+}
+
+/* Estilo para la pantalla de Pausa */
+#pause-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50; /* Por encima de todo */
+}
+
+.pause-content {
+  background-color: #00a6ee;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.pause-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.pause-content button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  #pause-btn {
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .pause-content h2 {
+    font-size: 20px;
+  }
+
+  .pause-content button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #game-over h2 {
+    font-size: 20px;
+  }
+
+  #game-over button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 8px;
+  }
+}
